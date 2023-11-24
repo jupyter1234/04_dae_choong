@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/my_calendar"
+        android:icon="@drawable/calendar_icon"
+        android:title="나의 달력" />
+
+    <item
+        android:id="@+id/sleep_video"
+        android:icon="@drawable/sleep_icon"
+        android:title="수면 영상" />
+
+    <item
+        android:id="@+id/my_profile"
+        android:icon="@drawable/profile_icon"
+        android:title="나의 정보" />
+</menu>
