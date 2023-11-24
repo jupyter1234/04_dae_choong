@@ -3,12 +3,12 @@ const { default: mongoose, Schema } = require("mongoose");
 const caffeineElementSchema = mongoose.Schema({
     
     id: {
-        type: Schema.ObjectId,
+        type: Schema.Types.ObjectId,
         unique: true,
         require: true
     },
     date: {
-        type: String,
+        type: Date,
         ref: "CaffeineInfo",
         required: true,
     },
@@ -19,7 +19,10 @@ const caffeineElementSchema = mongoose.Schema({
     },
     name: {
         type: String,
-        ref: "CaffeineFood",
+        required: true,
+    },
+    amount: {
+        type: Number,
         required: true,
     }
     
