@@ -5,6 +5,7 @@ const cors = require('cors');
 const port = 4000;
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
+const { router } = require('./routes/youtube');
 dotenv.config();
 
 app.use(cors());
@@ -21,4 +22,10 @@ mongoose.connect(process.env.MONGO_URI)
 app.get('/', (req,res, next) => {
     setImmediate(() => {next(new Error('it is an error'))});
     //res.send('Hello, world!하이');
+})
+
+app.use("/youtube", require("./routes/youtube"));
+
+app.listen(4000,'0.0.0.0', () => {
+    console.log(`${port}번에서 실행이 되었습니다.`);
 })
