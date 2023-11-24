@@ -101,7 +101,7 @@ router.get('/:date', async (req, res, next) => {
         res.status(200).json(result);
     } catch (error) {
         console.error(error);
-        res.status(500).json({ error: "서버 오류" });
+        res.status(411).json({ error: "서버 오류" });
     }
 });
 
