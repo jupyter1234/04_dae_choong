@@ -1,5 +1,6 @@
 package com.example.daechoong.ui.mycalendar
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.daechoong.ApplicationClass.Companion.CAFFEINERESULT
+import com.example.daechoong.ApplicationClass.Companion.DAYINFO
 import com.example.daechoong.R
 import com.example.daechoong.databinding.FragmentMycalendarBinding
 import com.example.daechoong.model.Day
@@ -248,7 +250,14 @@ class MyCalendarFragment: Fragment() {
 
     private fun setAdapter() {
         val dayAdapter = DayAdapter()
-
+        dayAdapter.detailDayListener =
+            object : DayAdapter.DetailDayListener {
+                override fun onClick(day: Day) {
+                    val intent = Intent(activity, DayDetailActivity::class.java)
+                    intent.putExtra(DAYINFO, day)
+                    startActivity(intent)
+                }
+            }
         binding.dayRv.apply {
             layoutManager = GridLayoutManager(this.context, 7)
             adapter = dayAdapter

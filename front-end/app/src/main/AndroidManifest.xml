@@ -31,6 +31,9 @@
         <activity
             android:name=".ui.caffeinetest.CaffeineTestResultActivity"
             android:exported="false" />
+        <activity
+            android:name=".ui.mycalendar.DayDetailActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

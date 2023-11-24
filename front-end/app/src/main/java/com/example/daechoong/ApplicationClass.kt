@@ -12,9 +12,10 @@ import java.util.concurrent.TimeUnit
 class ApplicationClass : Application() {
 
     companion object {
-        const val SERVER_URL = "http://192.168.1.20.41111"
+        const val SERVER_URL = "http://192.168.153.194.4000"
         lateinit var retrofit: Retrofit
         const val CAFFEINERESULT = "CaffeineResult"
+        const val DAYINFO = "DayInfo"
     }
 
     override fun onCreate() {
