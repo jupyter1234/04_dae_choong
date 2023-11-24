@@ -5,18 +5,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.daechoong.databinding.FragmentMycalendarBinding
+import com.example.daechoong.databinding.FragmentLoginBinding
 import com.example.daechoong.databinding.FragmentMyprofileBinding
 
-class MyProfileFragment: Fragment() {
-    lateinit var binding: FragmentMyprofileBinding
+class LoginFragment: Fragment() {
+    lateinit var binding: FragmentLoginBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentMyprofileBinding.inflate(inflater, container, false)
+        binding = FragmentLoginBinding.inflate(inflater, container, false)
         return binding.root
     }
 

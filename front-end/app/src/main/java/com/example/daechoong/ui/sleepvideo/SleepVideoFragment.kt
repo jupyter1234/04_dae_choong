@@ -71,10 +71,10 @@ class SleepVideoFragment: Fragment() {
             )
         }
 
-        videoViewModel.getVideos()
-        videoViewModel.youtube_links.observe(viewLifecycleOwner) {
-            Log.d("ServerResult", it.toString())
-        }
+//        videoViewModel.getVideos()
+//        videoViewModel.youtube_links.observe(viewLifecycleOwner) {
+//            Log.d("ServerResult", it.toString())
+//        }
         videoAdapter.submitList(videos)
 
     }

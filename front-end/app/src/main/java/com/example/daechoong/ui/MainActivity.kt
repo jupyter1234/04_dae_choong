@@ -2,11 +2,10 @@ package com.example.daechoong.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.daechoong.ApplicationClass.Companion.CAFFEINERESULT
 import com.example.daechoong.R
 import com.example.daechoong.databinding.ActivityMainBinding
 import com.example.daechoong.ui.mycalendar.MyCalendarFragment
-import com.example.daechoong.ui.myprofile.MyProfileFragment
+import com.example.daechoong.ui.myprofile.LoginFragment
 import com.example.daechoong.ui.sleepvideo.SleepVideoFragment
 
 class MainActivity : AppCompatActivity() {
@@ -35,7 +34,7 @@ class MainActivity : AppCompatActivity() {
                     return@setOnItemSelectedListener true
                 }
                 R.id.my_profile -> {
-                    supportFragmentManager.beginTransaction().replace(R.id.framelayout, MyProfileFragment()).commit()
+                    supportFragmentManager.beginTransaction().replace(R.id.framelayout, LoginFragment()).commit()
                     return@setOnItemSelectedListener true
                 }
                 else -> return@setOnItemSelectedListener false
