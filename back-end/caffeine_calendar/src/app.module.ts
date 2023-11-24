@@ -8,11 +8,13 @@ import { YoutubeModule } from './youtube/youtube.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule } from '@nestjs/config';
 import mongoose from 'mongoose';
+import { CaffeineFood, CaffeineFoodSchema } from './schema/CaffeineFoodSchecma';
 /*eslint-disabled*/
 @Module({
   imports: [
     ConfigModule.forRoot(),
     MongooseModule.forRoot(process.env.MongoDB_URI),
+    MongooseModule.forFeature([{ name: CaffeineFood.name, schema: CaffeineFoodSchema }]),
     UserModule,
     CalendarModule,
     CaffeineFoodModule,
