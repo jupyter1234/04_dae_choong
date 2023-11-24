@@ -1,10 +1,9 @@
-package com.example.daechoong
+package com.example.daechoong.ui
 
-import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import com.example.daechoong.databinding.ActivityCaffeineTestBinding
+import com.example.daechoong.ApplicationClass.Companion.CAFFEINERESULT
+import com.example.daechoong.R
 import com.example.daechoong.databinding.ActivityMainBinding
 import com.example.daechoong.ui.mycalendar.MyCalendarFragment
 import com.example.daechoong.ui.myprofile.MyProfileFragment
@@ -12,10 +11,13 @@ import com.example.daechoong.ui.sleepvideo.SleepVideoFragment
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
+    var caffeineResult: Boolean = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+//        caffeineResult = intent.getSerializableExtra(CAFFEINERESULT) as Boolean
 
         setUi()
     }

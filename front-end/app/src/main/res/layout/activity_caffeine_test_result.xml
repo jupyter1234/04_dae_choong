@@ -21,7 +21,7 @@
             android:id="@+id/titleIcon"
             android:layout_width="36dp"
             android:layout_height="36dp"
-            android:src="@drawable/coffee_icon"
+            android:src="@drawable/user_icon"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
@@ -29,7 +29,7 @@
             android:id="@+id/titleName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="카페인 중독 테스트"
+            android:text="당신의 상태는?"
             android:textSize="36dp"
             android:textStyle="bold"
             android:textColor="@color/black"
@@ -41,75 +41,84 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/questionBox"
+        android:id="@+id/resultBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="120dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/titleBox">
 
-        <TextView
-            android:id="@+id/stepState"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="[Step. 10 / 1]"
-            android:textStyle="bold"
-            android:textSize="20dp"
-            android:textColor="@color/black"
+        <ImageView
+            android:id="@+id/resultIcon"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/coffee_icon"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"  />
         <TextView
-            android:id="@+id/questionNum"
+            android:id="@+id/resultFront"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="첫 번째 질문"
+            android:text="카페인 "
             android:textSize="32dp"
             android:textStyle="bold"
             android:textColor="@color/black"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/stepState"/>
+            android:layout_marginStart="20dp"
+            app:layout_constraintStart_toEndOf="@id/resultIcon"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
         <TextView
-            android:id="@+id/questionContent"
+            android:id="@+id/resultState"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="매일 3잔 이상의 커피를 마신다"
+            android:text="중독"
+            android:textSize="32dp"
             android:textStyle="bold"
-            android:textSize="28dp"
+            android:textColor="@color/red"
+            app:layout_constraintStart_toEndOf="@id/resultFront"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+        <TextView
+            android:id="@+id/resultBack"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text=" 상태입니다"
+            android:textSize="32dp"
+            android:textStyle="bold"
             android:textColor="@color/black"
-            android:layout_marginTop="30dp"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@id/resultState"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/questionNum" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
     <Button
-        android:id="@+id/yesBtn"
-        android:layout_width="wrap_content"
+        android:id="@+id/startBtn"
+        android:layout_width="240dp"
         android:layout_height="wrap_content"
-        android:text="Yes"
-        android:textSize="32dp"
-        android:textStyle="bold"
+        android:text="시작하기"
         android:textColor="@color/white"
-        android:layout_marginTop="60dp"
+        android:textStyle="bold"
+        android:textSize="28dp"
         android:background="@drawable/button_background"
+        android:layout_marginTop="120dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/noBtn"
-        app:layout_constraintTop_toBottomOf="@id/questionBox" />
-    <Button
-        android:id="@+id/noBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="No"
-        android:textSize="32dp"
-        android:textStyle="bold"
-        android:textColor="@color/white"
-        android:layout_marginTop="60dp"
-        android:background="@drawable/button_background"
-        app:layout_constraintStart_toEndOf="@id/yesBtn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/questionBox" />
+        app:layout_constraintTop_toBottomOf="@id/resultBox"/>
+    <Button
+        android:id="@+id/endBtn"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:text="나가기"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="28dp"
+        android:background="@drawable/gray_button_background"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/startBtn"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
