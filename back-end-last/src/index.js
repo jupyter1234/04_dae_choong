@@ -25,7 +25,10 @@ app.get('/', (req,res, next) => {
 })
 
 app.use("/youtube", require("./routes/youtube"));
+app.use("/user/", require("./routes/user"));
+app.use("/caffeineFood", require("./routes/caffeineFood"));
 
-app.listen(4000,'0.0.0.0', () => {
-    console.log(`${port}번에서 실행이 되었습니다.`);
+const server = app.listen(4000, '0.0.0.0', () => {
+    const {address,port} = server.address();
+    console.log(`${address},${port}번에서 실행이 되었습니다.`);
 })
