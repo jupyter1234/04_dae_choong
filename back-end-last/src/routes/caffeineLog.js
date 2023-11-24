@@ -119,4 +119,42 @@ function getAllDatesInMonth(startDate) {
     return dates;
 }
 
+router.post('/caffeine', async(req,res,err) => {
+    try {
+        const { user_id, date } = req.body;
+        const caf = new CaffeineElement(req.body);
+        await caf.save();
+        const historyResult = await CaffeineElement.find(
+            { user_id : req.body.user_id, 
+                date : req.body.date
+            }
+        );
+        //console.log("history",historyResult);
+        const today_caf = historyResult.reduce((sum, item) => sum + item.amount, 0);
+        const info = await CaffeineInfo.find({
+            date : req.body.date
+
+    });
+        console.log("info",info);
+        if (today_caf >= 400) {
+            info.status = "bad";
+            await info.save();
+        }
+        else if (today_caf >= 200 && today_caf < 400) {
+            info.status = "normal";
+            await info.save();
+        }
+        
+        else  {
+            info.status = "good";
+            await info.save();
+        }
+        console.log(info.status);
+        res.status(200).json({"status" : info.status});
+    } catch (error) {
+        console.log(error);
+        res.status(420).send("caffeine add failed");
+    }
+})
+
 module.exports = router;
