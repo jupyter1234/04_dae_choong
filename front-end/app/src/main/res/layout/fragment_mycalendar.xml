@@ -29,7 +29,7 @@
             android:id="@+id/titleName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="나의 정보"
+            android:text="나의 달력"
             android:textSize="36dp"
             android:textStyle="bold"
             android:textColor="@color/black"
