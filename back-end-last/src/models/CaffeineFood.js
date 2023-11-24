@@ -10,7 +10,10 @@ const caffeineFoodSchema = mongoose.Schema({
         type: Number,
         required: true,
     }
-
+    
+})
+caffeineFoodSchema.index ({
+    name: 'text'
 })
 
 const CaffeineFood = mongoose.model("CaffeineFood", caffeineFoodSchema);
