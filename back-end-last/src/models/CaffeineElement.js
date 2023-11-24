@@ -1,24 +1,24 @@
-const { default: mongoose } = require("mongoose");
+const { default: mongoose, Schema } = require("mongoose");
 
 const caffeineElementSchema = mongoose.Schema({
     
     id: {
-        type: ObjectId,
+        type: Schema.ObjectId,
         unique: true,
         require: true
     },
     date: {
-        type: Schema.Types.ObjectId,
+        type: String,
         ref: "CaffeineInfo",
         required: true,
     },
     user_id: {
-        type: Schema.Types.ObjectId,
+        type: String,
         ref: "User",
         required: true,
     },
     name: {
-        type: Schema.Types.ObjectId,
+        type: String,
         ref: "CaffeineFood",
         required: true,
     }

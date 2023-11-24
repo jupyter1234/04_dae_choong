@@ -1,4 +1,4 @@
-const { default: mongoose } = require("mongoose");
+const { default: mongoose, Schema } = require("mongoose");
 
 const caffeineInfoSchema = mongoose.Schema({
     date: {
@@ -7,13 +7,13 @@ const caffeineInfoSchema = mongoose.Schema({
         require: true
     },
     user_id: {
-        type: Schema.Types.ObjectId,
+        type: String,
         ref: "User",
         required: true,
     },
     status: {
         type: String,
-        require: true,
+        default: "",
     },
     element: {
         type: Array,
