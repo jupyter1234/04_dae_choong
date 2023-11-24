@@ -9,4 +9,8 @@
     <color name="red">#FF0000</color>
     <color name="darkGray">#C4C4C4</color>
     <color name="green">#79C257</color>
+    <color name="blue">#0000FF</color>
+    <color name="bean_red">#A73838</color>
+    <color name="bean_yellow">#B89B34</color>
+    <color name="bean_green">#547A42</color>
 </resources>

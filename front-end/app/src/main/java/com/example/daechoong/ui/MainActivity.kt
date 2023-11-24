@@ -2,6 +2,7 @@ package com.example.daechoong.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.daechoong.ApplicationClass.Companion.CAFFEINERESULT
 import com.example.daechoong.R
 import com.example.daechoong.databinding.ActivityMainBinding
 import com.example.daechoong.ui.mycalendar.MyCalendarFragment
@@ -16,17 +17,22 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-//        caffeineResult = intent.getSerializableExtra(CAFFEINERESULT) as Boolean
+        caffeineResult = intent.getSerializableExtra(CAFFEINERESULT) as Boolean
 
         setUi()
     }
 
     private fun setUi() {
-        supportFragmentManager.beginTransaction().replace(R.id.framelayout, MyCalendarFragment()).commit()
+        val bundle = Bundle()
+        bundle.putBoolean(CAFFEINERESULT, caffeineResult)
+        var fragment = MyCalendarFragment()
+
+        fragment.arguments = bundle
+        supportFragmentManager.beginTransaction().replace(R.id.framelayout, fragment).commit()
         binding.bottomNavi.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.my_calendar -> {
-                    supportFragmentManager.beginTransaction().replace(R.id.framelayout, MyCalendarFragment()).commit()
+                    supportFragmentManager.beginTransaction().replace(R.id.framelayout, fragment).commit()
                     return@setOnItemSelectedListener true
                 }
                 R.id.sleep_video -> {
