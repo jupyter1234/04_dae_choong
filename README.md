@@ -8,6 +8,7 @@
 늦게까지 공부와 일을 하면서 카페인이 함유된 음료를 자주 마시게 되고 카페인 중독에 빠져들게 된다.
 이로 인해 수면 패턴이 엉망이 되고, 일상생활이 어려워진다.
 그래서 카페인 중독을 치유하여 사용자 스스로가 카페인을 조절할 수 있게 만드는 것이 최종 목표이다. 
+
 # 개발 설명
 1. 사용자의 카페인 중독 테스트 진단을 통해 중독인지 아닌지 확인한다.
 2. 사용자가 매일 카페인 섭취량과 수면 시간을 체크하도록 달력 시스템을 제공한다.
@@ -21,10 +22,13 @@
 ![figma3](https://github.com/Haedal-Appdong-Hackathon/04_dae_choong/assets/82032792/a614e6dd-0312-48d4-b4e5-608434895153)
 
 ## 백엔드 설계
-![백엔드 설계](https://productive-fibre-019.notion.site/1c15a326abbd4e7f9e1efc7d6f4435d3)
+[백엔드 설계 링크](https://productive-fibre-019.notion.site/1c15a326abbd4e7f9e1efc7d6f4435d3)
+
+## 백엔드 파일 구성
+<img width="203" alt="backend file 구성" src="https://github.com/Haedal-Appdong-Hackathon/04_dae_choong/assets/82032792/0d736c00-43de-4d52-a8c2-9bfd7ccab20d">
 
 ## 시연 영상
-![시연 영상](https://youtube.com/shorts/W_Ilg3-3xl0?feature=share)
+[시연 영상 링크](https://youtube.com/shorts/W_Ilg3-3xl0?feature=share)
 
 # 역할
 ### Android 개발
