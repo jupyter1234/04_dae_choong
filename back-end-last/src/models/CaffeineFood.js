@@ -3,7 +3,7 @@ const { default: mongoose } = require("mongoose");
 const caffeineFoodSchema = mongoose.Schema({
     name: {
         type: String,
-        unique: 1,
+        unique: true,
         required: true
     },
     amount: {

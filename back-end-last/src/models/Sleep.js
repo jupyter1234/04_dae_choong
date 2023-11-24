@@ -1,27 +1,25 @@
-const { default: mongoose } = require("mongoose");
+const { default: mongoose, Schema } = require("mongoose");
 
 const sleepSchema = mongoose.Schema({
     date: {
-        type: String,
-        unique: 1,
+        type: Date,
         required: true
     },
     user_id: {
-        type: Schema.Types.ObjectId,
+        type: String,
         ref: "User",
         required: true,
     },
     total_sleep: {
         type: String,
-        required: true,
+        default: "00:00",
     },
     expect_sleep: {
         type: String,
-        required: true,
+        default: "",
     },
     memo: {
         type: String,
-        required: true,
         maxLength: 300
     }
 

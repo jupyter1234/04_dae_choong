@@ -25,8 +25,13 @@ app.get('/', (req,res, next) => {
 })
 
 app.use("/youtube", require("./routes/youtube"));
+<<<<<<< Updated upstream
 app.use("/user/", require("./routes/user"));
 app.use("/caffeineFood", require("./routes/caffeineFood"));
+=======
+app.use("/sleep", require("./routes/sleep"));
+app.use("/calendar", require("./routes/caffeineLog"));
+>>>>>>> Stashed changes
 
 const server = app.listen(4000, '0.0.0.0', () => {
     const {address,port} = server.address();
